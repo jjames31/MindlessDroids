@@ -1,0 +1,9 @@
+# Local-only update tooling and machine-specific setup records
+/tools/flybrain_sync.py
+/tools/test_flybrain_sync.py
+/tools/Pull-Flybrain.cmd
+/docs/REMOTE_UPDATE*.md
+/Pull-Flybrain.cmd
+/GITHUB-UPDATE.md
+/REMOTE-DESKTOP-COMMANDER.txt
+/.maintenance/
