@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "purpose": "Domain-randomized multirotor envelopes for one shared visual controller",
+  "profiles": {
+    "agile_330": {
+      "name": "Agile 330 mm quadcopter",
+      "mass_kg": [1.4, 1.9],
+      "rotor_footprint_radius_m": [0.22, 0.29],
+      "vertical_clearance_radius_m": [0.14, 0.20],
+      "propulsion_efficiency": [0.94, 1.08],
+      "maximum_pitch_deg": [32.0, 40.0],
+      "camera_horizontal_fov_rad": [1.65, 2.15],
+      "camera_pitch_rad": [0.30, 0.55]
+    },
+    "utility_450": {
+      "name": "Utility 450 mm quadcopter",
+      "mass_kg": [1.8, 2.6],
+      "rotor_footprint_radius_m": [0.31, 0.40],
+      "vertical_clearance_radius_m": [0.16, 0.23],
+      "propulsion_efficiency": [0.93, 1.07],
+      "maximum_pitch_deg": [28.0, 35.0],
+      "camera_horizontal_fov_rad": [1.60, 2.10],
+      "camera_pitch_rad": [0.28, 0.52]
+    },
+    "x550": {
+      "name": "UnmannedRC X550 class quadcopter",
+      "mass_kg": [2.2, 3.8],
+      "rotor_footprint_radius_m": [0.46, 0.50],
+      "vertical_clearance_radius_m": [0.18, 0.26],
+      "propulsion_efficiency": [0.92, 1.08],
+      "maximum_pitch_deg": [27.0, 32.0],
+      "camera_horizontal_fov_rad": [1.65, 2.05],
+      "camera_pitch_rad": [0.30, 0.50]
+    },
+    "heavy_lift_650": {
+      "name": "Heavy-lift 650 mm quadcopter",
+      "mass_kg": [3.8, 5.2],
+      "rotor_footprint_radius_m": [0.56, 0.70],
+      "vertical_clearance_radius_m": [0.22, 0.32],
+      "propulsion_efficiency": [0.90, 1.06],
+      "maximum_pitch_deg": [22.0, 29.0],
+      "camera_horizontal_fov_rad": [1.50, 1.95],
+      "camera_pitch_rad": [0.24, 0.46]
+    }
+  }
+}
