@@ -1,0 +1,42 @@
+# Local Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Training outputs and model artifacts
+runs/
+safe-runs/
+checkpoints/
+logs/
+*.log
+*.jsonl
+*.pt
+*.pth
+*.npz
+*.npy
+*.onnx
+*.pkl
+*.pickle
+*.stop
+*.lock
+*.tmp
+
+# Private settings and local operations
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.maintenance/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# External data omitted from this source-only snapshot
+banc_controller_graph.json
+nextgen/hard-cases.json
