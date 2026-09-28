@@ -25,7 +25,7 @@ class ComponentTests(unittest.TestCase):
             for t in range(12):
                 x=torch.rand(4,OBS_SIZE); x[:,-2]=0; x[:,-1]=1
                 reset=np.array([t%3==0,False,False,t%4==0])
-                raw,h=m.actor(x,torch.from_numpy(reset))
+                raw,h=m.actor(x,h,torch.from_numpy(reset))
                 actual=actor.normalized_action(x.numpy(),reset)
                 np.testing.assert_allclose(actual,torch.tanh(raw).detach().numpy(),atol=2e-6)
 
@@ -102,7 +102,7 @@ class ComponentTests(unittest.TestCase):
         self.assertTrue((b.world.obstacle_n[b.world.curriculum_slots,:2]<10).all())
     def test_auxiliary_gradients_are_finite(self):
         m=Model(); x=torch.randn(4,76); h=torch.zeros(4,64)
-        _,h=m.actor(x,torch.zeros(4,64),torch.zeros(4,dtype=torch.bool))
+        _,h=m.actor(x,h,torch.zeros(4,dtype=torch.bool))
         prediction=m.auxiliaries(h,torch.zeros(4,3))
         self.assertEqual(prediction.shape,(4,6)); prediction.square().mean().backward()
         self.assertTrue(all(torch.isfinite(p.grad).all() for p in m.actor.parameters() if p.grad is not None))
