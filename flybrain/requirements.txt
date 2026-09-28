@@ -1,0 +1,4 @@
+# Versions observed in the source project's environment.
+# Select the appropriate PyTorch CPU/CUDA distribution for your platform.
+numpy==1.26.4
+torch==2.8.0
