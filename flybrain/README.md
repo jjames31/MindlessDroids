@@ -4,23 +4,6 @@ Source-only snapshot of the X550 recurrent navigation research project, staged
 September 28, 2026. This directory contains the recurrent model, learner,
 simulation environment, sensing, independent safety checks, evaluation, runner,
 and regression tests, plus their imported supporting modules.
-
-## Transfer status
-
-**This is an incomplete source snapshot, not a ready-to-run release.**
-
-28 of the 29 selected source/configuration files were uploaded. The upload of
-`x550_teachable/runtime.py` was blocked by the tool safety check and was not
-retried through another route. The original runtime remains in the local project.
-`tests/test_components.py` imports that missing module, so the full test suite
-cannot currently be collected from this repository alone. Tests were preserved,
-not removed or weakened to conceal the missing dependency.
-
-No unit tests, training runs, or flight evaluations were executed as part of this
-upload. Existing local source, running training, checkpoints, and history were
-not modified by the transfer. No navigation-performance or hardware-readiness
-claim follows from this repository snapshot.
-
 ## Layout
 
 | Path | Purpose |
@@ -49,8 +32,22 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-Installation alone does not resolve the missing runtime or the external asset
-requirement below. This package has not been validated as a standalone release.
+Installation alone does not resolve the external asset requirement below. This
+package has not been validated as a standalone release.
+
+## Verification status
+
+Current repository inspection confirms that `x550_teachable/runtime.py` is
+present and `flybrain/banc_controller_graph.json` is still absent. A lightweight
+test-discovery attempt was run from `flybrain` with:
+
+```bash
+python3 -m unittest discover x550_teachable/tests
+```
+
+In the current shell environment, discovery fails before running tests because
+PyTorch is not installed (`ModuleNotFoundError: No module named 'torch'`). This
+does not validate runtime behavior, training, checkpoints, or flight readiness.
 
 ## External asset and checkpoint compatibility
 
